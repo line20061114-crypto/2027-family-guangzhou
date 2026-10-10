@@ -159,6 +159,37 @@ body{margin:0;background:var(--bg);color:var(--ink);
 .lb img{margin:auto;max-width:100%;border-radius:10px;touch-action:pinch-zoom;flex:none}
 .lb::after{content:"화면을 누르면 닫힙니다";position:fixed;left:0;right:0;bottom:14px;text-align:center;font-size:12px;color:#fff;opacity:.7}
 
+/* 탭 이름: 폰 화면에서는 짧은 이름 */
+.ts{display:none}
+@media (max-width:540px){.tl{display:none}.ts{display:inline}.tabs button{font-size:15px;padding:11px 4px}}
+
+/* 체크리스트 */
+:root{--ok:#1c7a3d;--okbg:#e3f5ea}
+@media (prefers-color-scheme:dark){:root{--ok:#6fdc9a;--okbg:#16301f}}
+.ovr{margin:10px 0 4px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.ovr-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:14px}
+.ovr-top strong{font-size:15.5px;color:var(--pri)}
+.ovr-top span{color:var(--sub);font-weight:700}
+.bar{margin:10px 0 4px;height:10px;border-radius:999px;background:var(--bg);overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--acc),#f5a07f);transition:width .25s}
+.rst{margin-top:8px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--sub);font:inherit;font-size:12.5px;cursor:pointer}
+.rst[data-arm="1"]{color:#fff;background:var(--acc);border-color:transparent}
+.card h3.hasprog{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.prog{flex:none;padding:2px 10px;border-radius:999px;font-size:12.5px;font-weight:800;background:var(--accbg);color:var(--acc)}
+.prog.done{background:var(--okbg);color:var(--ok)}
+li.task{list-style:none;margin:0}
+.card ul:has(>li.task){padding-left:0;margin:2px 0}
+li.task+li.task{border-top:1px dashed var(--line)}
+.chk{position:relative;display:flex;align-items:flex-start;gap:12px;padding:12px 2px;cursor:pointer;line-height:1.5;-webkit-tap-highlight-color:transparent}
+.chk input{position:absolute;opacity:0;width:1px;height:1px}
+.box{flex:none;width:24px;height:24px;margin-top:1px;border:2px solid #aab6c1;border-radius:8px;background:var(--card);
+  display:grid;place-items:center;transition:background .15s,border-color .15s}
+@media (prefers-color-scheme:dark){.box{border-color:#55606c}}
+.chk input:checked+.box{background:linear-gradient(135deg,var(--pri),var(--pri2));border-color:transparent}
+.chk input:checked+.box::after{content:"";width:6px;height:11px;margin-top:-2px;border:solid var(--on);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.chk input:focus-visible+.box{outline:3px solid var(--pri2);outline-offset:2px}
+.chk input:checked~.txt{color:var(--sub);text-decoration:line-through;text-decoration-color:var(--line)}
+
 .foot{margin:36px 0 0;text-align:center;font-size:12.5px;color:var(--sub)}
 #top{position:fixed;right:16px;bottom:20px;width:46px;height:46px;border:0;border-radius:50%;font-size:11px;font-weight:800;
   background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--on);box-shadow:var(--shadow);
@@ -188,7 +219,7 @@ body{margin:0;background:var(--bg);color:var(--ink);
 <rect x="154" y="94" width="3" height="3"/><rect x="180" y="114" width="3" height="3"/><rect x="210" y="102" width="3" height="3"/><rect x="296" y="98" width="3" height="3"/>
 <rect x="302" y="112" width="3" height="3"/><rect x="324" y="72" width="3" height="3"/><rect x="330" y="90" width="3" height="3"/><rect x="348" y="108" width="3" height="3"/>
 <rect x="378" y="90" width="3" height="3"/><rect x="384" y="104" width="3" height="3"/>
-</g></svg></header><div class="wrap"><nav class="tabs" role="tablist"><button role="tab" aria-selected="true" class="on" data-tab="intro">광저우 소개</button><button role="tab" aria-selected="false" class="" data-tab="plan">여행 일정</button><button role="tab" aria-selected="false" class="" data-tab="stay">숙소</button><button role="tab" aria-selected="false" class="" data-tab="near">근교 도시 여행</button></nav><section id="tab-intro" class="panel on"><h1>2027년 1월 말 광저우 가족 여행 기획 리포트: 여행지 매력도 및 비교 분석</h1>
+</g></svg></header><div class="wrap"><nav class="tabs" role="tablist"><button role="tab" aria-selected="true" class="on" data-tab="intro"><span class="tl">광저우 소개</span><span class="ts">소개</span></button><button role="tab" aria-selected="false" class="" data-tab="plan"><span class="tl">여행 일정</span><span class="ts">일정</span></button><button role="tab" aria-selected="false" class="" data-tab="stay"><span class="tl">숙소</span><span class="ts">숙소</span></button><button role="tab" aria-selected="false" class="" data-tab="near"><span class="tl">근교 도시 여행</span><span class="ts">근교</span></button><button role="tab" aria-selected="false" class="" data-tab="check"><span class="tl">체크리스트</span><span class="ts">체크</span></button></nav><section id="tab-intro" class="panel on"><h1>2027년 1월 말 광저우 가족 여행 기획 리포트: 여행지 매력도 및 비교 분석</h1>
 <h2>1. 핵심 요약 (Executive Summary)</h2>
 <p>1월 말 광저우는 <strong>가족 구성원 4인의 상반된 취향(모닝 러닝, 해산물·채식 중심 미식, 트렌디한 골목 감성 및 하이엔드 쇼핑)을 피로도 없이 완벽하게 충족시키는 최적의 도심 휴양지</strong>입니다.</p>
 <ul>
@@ -905,6 +936,175 @@ body{margin:0;background:var(--bg);color:var(--ink);
 <li><strong>최종 권고</strong>: 2027년 1월 말~2월 초 여행 시, 이동 스트레스 없이 '휴식·해산물 미식·감성 편집숍'을 모두 만족하기 위해서는 <strong>1순위 순더</strong> 또는 <strong>2순위 포산</strong>을 당일치기 행선지로 선택하는 것이 가장 이상적입니다.</li>
 </ul>
 </section>
+</section><section id="tab-check" class="panel"><h1>광저우 가족여행 체크리스트 (2027.1.28 ~ 2.1)</h1><div id="ovr" class="ovr"></div><p class="hint">체크 표시는 이 휴대폰(브라우저)에만 저장되며 가족끼리 공유되지는 않습니다</p>
+<h2>1. 예약</h2>
+<section class="card"><h3>항공편 예약 (아시아나)</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="75c475d6" data-default="1"><span class="box" aria-hidden="true"></span><span class="txt">아내: 비즈니스 편도 예약 완료</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="ffc2b923"><span class="box" aria-hidden="true"></span><span class="txt">아내: 나머지 한 구간 예약 확인 (편도만 예약된 경우)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="c390ce25"><span class="box" aria-hidden="true"></span><span class="txt">남편: 항공권 예약 (출국 1/28 07:55 · 귀국 2/1)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="b8492fa4"><span class="box" aria-hidden="true"></span><span class="txt">장녀: 항공권 예약</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="0c241c8a"><span class="box" aria-hidden="true"></span><span class="txt">차녀: 항공권 예약</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="bbb17d81"><span class="box" aria-hidden="true"></span><span class="txt">귀국편(2/1) 출발·도착 시간이 정해지면 일정 5일차 시간표 갱신하기</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>숙소 예약 · 체크인 (오크우드 프리미어 광저우, 4박)</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="96f5e48c"><span class="box" aria-hidden="true"></span><span class="txt">객실 확정: 수페리어 2베드룸 (무료 취소 조건 다시 확인)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="9aac54c6"><span class="box" aria-hidden="true"></span><span class="txt">항공권 발권 후 숙소 예약 (1/28 ~ 2/1)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="e1f9eab2"><span class="box" aria-hidden="true"></span><span class="txt">도착이 11:10이므로 얼리 체크인 또는 짐 보관 문의</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="8fa1e98d"><span class="box" aria-hidden="true"></span><span class="txt">귀국일(2/1) 체크아웃 시간 확인</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="6292b0ae"><span class="box" aria-hidden="true"></span><span class="txt">호텔 주소·전화번호를 중국어로 저장 (택시 기사용)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="719e1567"><span class="box" aria-hidden="true"></span><span class="txt">객실 세탁·건조기 사용법 확인 (러닝복)</span></label></li>
+</ul>
+</section>
+<h2>2. 일자별 여행 계획 (Day 1~4)</h2>
+<section class="card"><h3>Day 1 · 1/28(목) 입국 · 주강신청</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="21c777b5"><span class="box" aria-hidden="true"></span><span class="txt">입국 수속 서류 준비 (여권, 숙소 주소)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="d0ecaaf4"><span class="box" aria-hidden="true"></span><span class="txt">공항 → 호텔 이동 방법 정하기 (DiDi, 약 45~50분)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="a67603f0"><span class="box" aria-hidden="true"></span><span class="txt">호텔 체크인 또는 짐 맡기기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="db142201"><span class="box" aria-hidden="true"></span><span class="txt">첫 식사: 광둥식 차관 후보 정하기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="4d08aad2"><span class="box" aria-hidden="true"></span><span class="txt">화청광장 · 광저우 대극원 산책</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="a6a74dcc"><span class="box" aria-hidden="true"></span><span class="txt">저녁 식당 예약 (해산물)</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>Day 2 · 1/29(금) 사몐섬 · 융칭팡</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="fdb520f3"><span class="box" aria-hidden="true"></span><span class="txt">아침 러닝: 화청광장 ~ 하이신샤 6km (남편 · 장녀)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="a01ea8ab"><span class="box" aria-hidden="true"></span><span class="txt">사몐섬 산책</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="97357c16"><span class="box" aria-hidden="true"></span><span class="txt">점심: 해산물 딤섬 식당 (예약 여부 확인)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="6b0c55e7"><span class="box" aria-hidden="true"></span><span class="txt">융칭팡 방문 · 서점 들르기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="dba996f7"><span class="box" aria-hidden="true"></span><span class="txt">저녁 식당 정하기 (청증어 · 채소 요리)</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>Day 3 · 1/30(토) 둥산커우 · K11</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="38452e82"><span class="box" aria-hidden="true"></span><span class="txt">아침 러닝: 얼사다오 8km (남편 · 장녀)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="26b45b36"><span class="box" aria-hidden="true"></span><span class="txt">둥산커우 골목 투어</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="c8df6c86"><span class="box" aria-hidden="true"></span><span class="txt">점심: 채식 · 비건 식당</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="09bbce80"><span class="box" aria-hidden="true"></span><span class="txt">K11 아트몰 쇼핑 (장녀 · 차녀)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="746b0f8c"><span class="box" aria-hidden="true"></span><span class="txt">풋스파 예약 (아내 · 남편)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="6fb79e41"><span class="box" aria-hidden="true"></span><span class="txt">저녁: 해산물 샤브샤브 식당 예약</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>Day 4 · 1/31(일) 근교 당일치기 (순더 기준)</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="e99e134c"><span class="box" aria-hidden="true"></span><span class="txt">일정 탭은 펑젠수향 유람, 근교 탭은 허미술관 — 하나로 정하기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="ce027511"><span class="box" aria-hidden="true"></span><span class="txt">광저우 남역 ↔ 순더역 고속철 이동 방법 정하기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="1934b649"><span class="box" aria-hidden="true"></span><span class="txt">청후이위안 관람</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="7ec238a4"><span class="box" aria-hidden="true"></span><span class="txt">점심: 순더 해산물 식당</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="ab38749d"><span class="box" aria-hidden="true"></span><span class="txt">저녁: 광저우 타워가 보이는 식당 예약</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>Day 5 · 2/1(월) 귀국</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="6958d480"><span class="box" aria-hidden="true"></span><span class="txt">짐 다시 확인, 체크아웃</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="4ab85a77"><span class="box" aria-hidden="true"></span><span class="txt">항공 출발 시간에서 거꾸로 계산해 호텔 출발 시각 정하기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="e5fa9488"><span class="box" aria-hidden="true"></span><span class="txt">공항 이동 (DiDi, 약 45~50분)</span></label></li>
+</ul>
+</section>
+<h2>3. 근교 도시 당일치기</h2>
+<section class="card"><h3>행선지 정하기와 이동</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="efb5ad0b"><span class="box" aria-hidden="true"></span><span class="txt">행선지 결정: 1순위 순더 · 2순위 포산 (선전·홍콩은 이동 시간이 길어 신중하게)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="8aa70a4e"><span class="box" aria-hidden="true"></span><span class="txt">이동편 확인: 고속철(광저우 남역) 또는 지하철(광포선)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="5017030f"><span class="box" aria-hidden="true"></span><span class="txt">선전·홍콩을 고른다면: 여권 지참, 출입국 심사 시간, 돌아올 때 입국 조건 확인</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="24a02380"><span class="box" aria-hidden="true"></span><span class="txt">방문할 곳의 운영시간 · 휴관일 확인</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="d976241e"><span class="box" aria-hidden="true"></span><span class="txt">현지 점심 식당 후보 정하기</span></label></li>
+</ul>
+</section>
+<h2>4. 사전 준비</h2>
+<section class="card"><h3>유심 · 통신</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="bb0f20fd"><span class="box" aria-hidden="true"></span><span class="txt">유심 · eSIM · 로밍 중 방식 정하기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="c1ef61f7"><span class="box" aria-hidden="true"></span><span class="txt">4명 각자 유심 구매</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="c1b8d225"><span class="box" aria-hidden="true"></span><span class="txt">구글 서비스 등은 중국에서 제한될 수 있으니 지도 · 메신저 대체 방법 확인</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="1b8ca872"><span class="box" aria-hidden="true"></span><span class="txt">번역 앱 설치, 오프라인 사전 내려받기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="ef9e5654"><span class="box" aria-hidden="true"></span><span class="txt">출발 전 유심 작동 · 로밍 설정 점검</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>중국 모바일 결제 (알리페이 · 위챗페이)</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="a4102b28"><span class="box" aria-hidden="true"></span><span class="txt">알리페이 · 위챗페이 중 사용할 방식 결정</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="93052f8a"><span class="box" aria-hidden="true"></span><span class="txt">해외 카드 등록이 되는지 확인</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="c1daa62f"><span class="box" aria-hidden="true"></span><span class="txt">4명 각자 앱 설치 · 본인 인증 · 카드 등록 (출발 전에 미리)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="e6982884"><span class="box" aria-hidden="true"></span><span class="txt">결제가 안 될 때를 대비해 위안화 현금 소액 환전</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="12c8b73d"><span class="box" aria-hidden="true"></span><span class="txt">해외 결제 가능한 카드와 한도 확인</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="84f198b0"><span class="box" aria-hidden="true"></span><span class="txt">DiDi 앱 설치와 결제 수단 연결</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>사전 예매 (관광지 · 교통 · 스파)</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="963ab649"><span class="box" aria-hidden="true"></span><span class="txt">예약이 필요한 관광지 · 미술관 확인 (청후이위안, 허미술관, 광저우 타워 등)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="91b56581"><span class="box" aria-hidden="true"></span><span class="txt">고속철 · 지하철 티켓 (근교 당일치기)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="31b43879"><span class="box" aria-hidden="true"></span><span class="txt">풋스파 · 마사지 예약</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="9d8f49b7"><span class="box" aria-hidden="true"></span><span class="txt">야경 크루즈 (대안 일정을 고를 경우)</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>맛집 후보</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="7fe50b78"><span class="box" aria-hidden="true"></span><span class="txt">Day 1 첫 식사 · 저녁 후보</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="64902fb3"><span class="box" aria-hidden="true"></span><span class="txt">Day 2 점심 · 저녁 후보</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="92e7951c"><span class="box" aria-hidden="true"></span><span class="txt">Day 3 점심 · 저녁 후보</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="d16fa7c0"><span class="box" aria-hidden="true"></span><span class="txt">근교 도시 점심 후보</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="6c209fab"><span class="box" aria-hidden="true"></span><span class="txt">숙소 근처 후보 예약 가능 여부 (빙성핀웨, 리위안)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="3d5cb7e8"><span class="box" aria-hidden="true"></span><span class="txt">육류 제외 주문용 중국어 카드를 휴대폰에 캡처해 저장 (근교 도시 탭)</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>방문 서점 후보</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="dd03c665"><span class="box" aria-hidden="true"></span><span class="txt">팡숴 (타이구후이)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="44df9871"><span class="box" aria-hidden="true"></span><span class="txt">중수거 (융칭팡)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="15448de3"><span class="box" aria-hidden="true"></span><span class="txt">둥산커우 독립서점</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="e7106cd1"><span class="box" aria-hidden="true"></span><span class="txt">위 후보 중 가고 싶은 곳을 고르고 영업시간 확인</span></label></li>
+</ul>
+</section>
+<h2>5. 서류 · 안전</h2>
+<section class="card"><h3>서류 · 입국</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="ac4b3de4"><span class="box" aria-hidden="true"></span><span class="txt">여권 유효기간 확인 (4명)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="d8ff0cdc"><span class="box" aria-hidden="true"></span><span class="txt">무비자 입국 조건 최신 확인 (보도된 시행 기한은 2026년 12월 31일, 2027년 연장 여부 확인 필요)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="dcdf850d"><span class="box" aria-hidden="true"></span><span class="txt">비자가 필요하면 신청 일정 잡기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="2264507d"><span class="box" aria-hidden="true"></span><span class="txt">입국 심사용 숙소 예약 확인서 · 항공권 사본 준비</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="599e2b11"><span class="box" aria-hidden="true"></span><span class="txt">여행자보험 가입 (4명)</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>비상 연락</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="f420947d"><span class="box" aria-hidden="true"></span><span class="txt">영사콜센터 +82-2-3210-0404 저장 (출발 전 번호 재확인)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="616d73a5"><span class="box" aria-hidden="true"></span><span class="txt">가족 연락처 · 호텔 연락처 정리</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="d0906715"><span class="box" aria-hidden="true"></span><span class="txt">현지에서 길을 잃었을 때 만나는 장소 정하기</span></label></li>
+</ul>
+</section>
+<h2>6. 짐싸기</h2>
+<section class="card"><h3>공용 · 서류 · 전자기기</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="aec25486"><span class="box" aria-hidden="true"></span><span class="txt">여권 · 항공권 · 숙소 확인서 (휴대폰에도 저장)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="ff570885"><span class="box" aria-hidden="true"></span><span class="txt">신용카드, 소액 현금</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="e9430505"><span class="box" aria-hidden="true"></span><span class="txt">충전기 · 보조배터리 (기내 휴대) · 멀티 어댑터</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="6669ea19"><span class="box" aria-hidden="true"></span><span class="txt">상비약 · 개인 복용약</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="bfe5b456"><span class="box" aria-hidden="true"></span><span class="txt">접이식 우산</span></label></li>
+</ul>
+</section>
+<section class="card"><h3>옷 · 러닝 · 쇼핑</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="b7c0f489"><span class="box" aria-hidden="true"></span><span class="txt">출발 직전 광저우 날씨 예보 확인 후 옷 정하기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="abf49b8f"><span class="box" aria-hidden="true"></span><span class="txt">러닝화 · 러닝복 (남편 · 장녀)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="7939617f"><span class="box" aria-hidden="true"></span><span class="txt">오래 걸어도 편한 신발 (전원)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="be09847f"><span class="box" aria-hidden="true"></span><span class="txt">쇼핑 대비 접이식 가방, 캐리어 여유 공간</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="6979b62c"><span class="box" aria-hidden="true"></span><span class="txt">기내 반입 가능한 액체류 규정 확인</span></label></li>
+</ul>
+</section>
+<h2>7. 출발 직전</h2>
+<section class="card"><h3>출발 전 확인</h3>
+<ul>
+<li class="task"><label class="chk"><input type="checkbox" data-id="3129dccf"><span class="box" aria-hidden="true"></span><span class="txt">출발 24시간 전 온라인 체크인</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="d04f8b78"><span class="box" aria-hidden="true"></span><span class="txt">07:55 출발이므로 이른 아침 공항 가는 교통편 확인</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="71a4fbbe"><span class="box" aria-hidden="true"></span><span class="txt">모바일 결제 · 지도 · 번역 앱 로그인 점검</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="c2f23ef8"><span class="box" aria-hidden="true"></span><span class="txt">귀국 시 면세 한도 · 반입 금지 품목 확인</span></label></li>
+</ul>
+</section>
 </section><p class="foot">가족 공유용 여행 페이지</p></div><button id="top" aria-label="맨 위로">TOP</button></div>
 <script>
 function initUi(){
@@ -943,6 +1143,47 @@ function initUi(){
   }
   window.addEventListener('scroll',onScroll);onScroll();
   if(top)top.addEventListener('click',function(){window.scrollTo(0,0)});
+  initChecklist();
+}
+function initChecklist(){
+  var ck=document.getElementById('tab-check');if(!ck)return;
+  var KEY='gz27-check-v1',st={};
+  try{st=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){st={};}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+  var boxes=ck.querySelectorAll('input[type=checkbox][data-id]');
+  var o=document.getElementById('ovr');
+  if(o){o.innerHTML='<div class="ovr-top"><strong>전체 진행</strong><span id="ovrn"></span></div>'
+    +'<div class="bar"><i id="ovrb"></i></div><button type="button" class="rst" id="rst">체크 초기화</button>';}
+  var rst=document.getElementById('rst'),rt=null;
+  function apply(){
+    boxes.forEach(function(x){
+      var id=x.dataset.id;
+      x.checked=Object.prototype.hasOwnProperty.call(st,id)?!!st[id]:x.hasAttribute('data-default');
+    });
+  }
+  function refresh(){
+    var done=0;
+    boxes.forEach(function(x){if(x.checked)done++;var li=x.closest('li');if(li)li.classList.toggle('done',x.checked);});
+    ck.querySelectorAll('section.card').forEach(function(sec){
+      var b=sec.querySelectorAll('input[data-id]');if(!b.length)return;
+      var d=0;b.forEach(function(x){if(x.checked)d++;});
+      var h=sec.querySelector('h3');if(!h)return;
+      var p=h.querySelector('.prog');
+      if(!p){p=document.createElement('span');p.className='prog';h.appendChild(p);h.classList.add('hasprog');}
+      p.textContent=d+'/'+b.length;p.classList.toggle('done',d===b.length);
+    });
+    var t=boxes.length,pct=t?Math.round(done*100/t):0;
+    var n=document.getElementById('ovrn'),bar=document.getElementById('ovrb');
+    if(n)n.textContent=done+' / '+t+' 완료 · '+pct+'%';
+    if(bar)bar.style.width=pct+'%';
+  }
+  boxes.forEach(function(x){x.addEventListener('change',function(){st[x.dataset.id]=x.checked;save();refresh();});});
+  if(rst)rst.addEventListener('click',function(){
+    if(rst.dataset.arm==='1'){st={};save();apply();refresh();rst.dataset.arm='0';rst.textContent='체크 초기화';clearTimeout(rt);return;}
+    rst.dataset.arm='1';rst.textContent='모든 체크가 지워집니다. 한 번 더 누르세요';
+    rt=setTimeout(function(){rst.dataset.arm='0';rst.textContent='체크 초기화';},4000);
+  });
+  apply();refresh();
 }
 initUi();</script>
 </body>
