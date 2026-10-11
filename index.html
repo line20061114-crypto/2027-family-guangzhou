@@ -172,6 +172,10 @@ body{margin:0;background:var(--bg);color:var(--ink);
 .ovr-top span{color:var(--sub);font-weight:700}
 .bar{margin:10px 0 4px;height:10px;border-radius:999px;background:var(--bg);overflow:hidden;border:1px solid var(--line)}
 .bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--acc),#f5a07f);transition:width .25s}
+.ovr-bot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:8px}
+.ovr-bot .rst{margin-top:0}
+.syn{font-size:12px;color:var(--ok);font-weight:700}
+.syn.bad{color:var(--sub);font-weight:500}
 .rst{margin-top:8px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--sub);font:inherit;font-size:12.5px;cursor:pointer}
 .rst[data-arm="1"]{color:#fff;background:var(--acc);border-color:transparent}
 .card h3.hasprog{display:flex;justify-content:space-between;align-items:center;gap:10px}
@@ -313,8 +317,8 @@ li.task+li.task{border-top:1px dashed var(--line)}
 <li><strong>여행 기간:</strong> 2027년 1월 28일(목) ~ 2027년 2월 1일(월) [4박 5일]</li>
 <li><strong>항공편 스케줄:</strong>
 <ul>
-<li><strong>출국:</strong> 1월 28일(목) 07:55 인천(ICN) 출발 → 11:10 광저우(CAN) 도착</li>
-<li><strong>귀국:</strong> 2월 1일(월) 광저우(CAN) 출발 → 인천(ICN) 도착 (출발·도착 시간 미정, 예약 후 기입)</li>
+<li><strong>출국:</strong> 1월 28일(목) 아시아나 OZ369 · 07:55 인천(ICN) 출발 → 11:10 광저우(CAN) 도착 · 비즈니스 (예약 확약)</li>
+<li><strong>귀국:</strong> 2월 1일(월) 대한항공 KE868 · 13:20 광저우(CAN) 터미널2 출발 → 17:40 인천(ICN) 터미널2 도착 · 일반석 (비행 3시간 20분)</li>
 </ul>
 </li>
 <li><strong>추천 숙소 구역:</strong> 주강신청(珠江新城, Zhujiang New Town) 5성급 호텔 (모닝 러닝 트랙 및 쇼핑몰 접근성 최적)</li>
@@ -322,11 +326,11 @@ li.task+li.task{border-top:1px dashed var(--line)}
 </div>
 <h2>1. [핵심 요약] (Main Concept &amp; Value)</h2>
 <ul>
-<li><strong>항공 최적화:</strong> 첫날 정오부터 온전하게 시작되는 4박 5일 동선과, 귀국일 아침 여유 있는 공항 이동으로 피로 없이 깔끔하게 귀국하는 스케줄입니다.</li>
+<li><strong>항공 최적화:</strong> 첫날 정오부터 온전하게 시작되는 4박 5일 동선과, 귀국편이 13:20 출발이라 귀국일 오전에 여유 있게 체크아웃하고 공항으로 이동하는 스케줄입니다.</li>
 <li><strong>마일리지 최적화 (총 18만 마일 중 2027년 소멸 8만 마일 고려):</strong>
 <ul>
-<li>부모님 2인: 비즈니스 클래스(프레스티지) 왕복 발권(약 90,000~105,000마일 소진으로 2027년 소멸분 8만 마일 완전 해소).</li>
-<li>자녀 2인: 일반석 보너스 항공권 발권(약 60,000마일)으로 잔여 마일리지를 알뜰하게 소진.</li>
+<li>출국편(아시아나 OZ369): 비즈니스 마일리지 항공권 확약. 예약 화면 기준 공제 마일리지 67,500마일, 세금 및 제반요금 384,000원 (탑승자별 적용 내역은 확인 필요).</li>
+<li>귀국편(대한항공 KE868): 일반석으로 예약했습니다.</li>
 </ul>
 </li>
 <li><strong>가족 맞춤형 가치:</strong>
@@ -450,10 +454,10 @@ li.task+li.task{border-top:1px dashed var(--line)}
 </section>
 <section class="day"><header class="dayhead"><span class="daynum"><small>DAY</small>5</span><div class="daymeta"><div class="daydate">2월 1일 (월)</div><h3>여유로운 조식 &amp; 안전한 귀국</h3></div></header>
 <ul>
-<li><strong>08:00 ~ 09:15 [호텔 체크아웃 &amp; 아침]:</strong> 호텔 조식 뷔페 가볍게 이용 후 체크아웃. <em>(귀국편 시간 확정 후 조정)</em></li>
-<li><strong>[공항 이동]:</strong> DiDi 탑승하여 바이윈 공항(CAN)으로 이동 (약 45~50분 소요). 출발 시간에서 공항 도착 3시간 전을 기준으로 호텔 출발 시각을 역산합니다.</li>
-<li><strong>[출국 수속]:</strong> 탑승 수속 및 라운지 휴식.</li>
-<li><strong>귀국편:</strong> 2월 1일(월) 광저우(CAN) 출발 → 인천(ICN) 도착 <em>(시간 미정, 예약 후 기입)</em></li>
+<li><strong>08:00 ~ 09:15 [호텔 체크아웃 &amp; 아침]:</strong> 호텔 조식 뷔페 가볍게 이용 후 체크아웃.</li>
+<li><strong>09:15 [호텔 출발 · 공항 이동]:</strong> DiDi 탑승하여 바이윈 공항(CAN) 터미널2로 이동 (약 45~50분 소요). 출발 3시간 전인 10:20경 공항 도착을 기준으로 역산한 시각입니다.</li>
+<li><strong>10:20 ~ 13:20 [출국 수속]:</strong> 탑승 수속, 출국 심사 후 면세점 쇼핑과 식사.</li>
+<li><strong>13:20 [귀국편 출발]:</strong> 대한항공 KE868, 광저우(CAN) 터미널2 출발 → <strong>17:40 인천(ICN) 터미널2 도착</strong> (비행 3시간 20분).</li>
 </ul>
 </section>
 <h2>3. [미식 추천] (아내 맞춤 해산물 &amp; 채식 메뉴 가이드)</h2>
@@ -671,7 +675,7 @@ li.task+li.task{border-top:1px dashed var(--line)}
 </li>
 <li><strong>객실 예약 팁</strong>:
 <ul>
-<li>현재 예약 플랫폼 상 '수페리어 2베드룸(132㎡)' 기준 [무료 취소 / 선결제 필요 없음] 조건이 제공되므로, 항공권 발권 일정에 맞춰 선점해 두는 것이 유리합니다.</li>
+<li>현재 예약 플랫폼 상 '수페리어 2베드룸(132㎡)' 기준 [무료 취소 / 선결제 필요 없음] 조건이 제공되며, 항공편이 확정되었으므로(1월 28일 입실, 2월 1일 퇴실) 서둘러 선점해 두는 것이 유리합니다.</li>
 </ul>
 </li>
 </ul>
@@ -941,11 +945,14 @@ li.task+li.task{border-top:1px dashed var(--line)}
 <section class="card"><h3>항공편 예약 (아시아나)</h3>
 <ul>
 <li class="task"><label class="chk"><input type="checkbox" data-id="75c475d6" data-default="1"><span class="box" aria-hidden="true"></span><span class="txt">아내: 비즈니스 편도 예약 완료</span></label></li>
-<li class="task"><label class="chk"><input type="checkbox" data-id="ffc2b923"><span class="box" aria-hidden="true"></span><span class="txt">아내: 나머지 한 구간 예약 확인 (편도만 예약된 경우)</span></label></li>
-<li class="task"><label class="chk"><input type="checkbox" data-id="c390ce25"><span class="box" aria-hidden="true"></span><span class="txt">남편: 항공권 예약 (출국 1/28 07:55 · 귀국 2/1)</span></label></li>
-<li class="task"><label class="chk"><input type="checkbox" data-id="b8492fa4"><span class="box" aria-hidden="true"></span><span class="txt">장녀: 항공권 예약</span></label></li>
-<li class="task"><label class="chk"><input type="checkbox" data-id="0c241c8a"><span class="box" aria-hidden="true"></span><span class="txt">차녀: 항공권 예약</span></label></li>
-<li class="task"><label class="chk"><input type="checkbox" data-id="bbb17d81"><span class="box" aria-hidden="true"></span><span class="txt">귀국편(2/1) 출발·도착 시간이 정해지면 일정 5일차 시간표 갱신하기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="8202f532" data-default="1"><span class="box" aria-hidden="true"></span><span class="txt">남편: 항공권 예약 완료</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="6281f9e6" data-default="1"><span class="box" aria-hidden="true"></span><span class="txt">장녀: 항공권 예약 완료</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="49a72b9a" data-default="1"><span class="box" aria-hidden="true"></span><span class="txt">차녀: 항공권 예약 완료</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="c74970e1" data-default="1"><span class="box" aria-hidden="true"></span><span class="txt">출국편: 아시아나 OZ369 · 1/28(목) 07:55 인천 → 11:10 광저우 (비즈니스, 확약)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="5c0125dc" data-default="1"><span class="box" aria-hidden="true"></span><span class="txt">귀국편: 대한항공 KE868 · 2/1(월) 13:20 광저우 T2 → 17:40 인천 T2 (일반석)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="506e2ada" data-default="1"><span class="box" aria-hidden="true"></span><span class="txt">귀국편 시간 확정에 따라 일정 5일차 시간표 갱신</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="244cd035"><span class="box" aria-hidden="true"></span><span class="txt">좌석 배정 확인 (4명 모두, 출국편·귀국편)</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="ab6bfaa3"><span class="box" aria-hidden="true"></span><span class="txt">인천 출발 터미널 확인 (OZ369 터미널은 확인 필요) · 가는편·귀국편 항공사가 달라 수하물 규정도 각각 확인</span></label></li>
 </ul>
 </section>
 <section class="card"><h3>숙소 예약 · 체크인 (오크우드 프리미어 광저우, 4박)</h3>
@@ -1000,7 +1007,7 @@ li.task+li.task{border-top:1px dashed var(--line)}
 <section class="card"><h3>Day 5 · 2/1(월) 귀국</h3>
 <ul>
 <li class="task"><label class="chk"><input type="checkbox" data-id="6958d480"><span class="box" aria-hidden="true"></span><span class="txt">짐 다시 확인, 체크아웃</span></label></li>
-<li class="task"><label class="chk"><input type="checkbox" data-id="4ab85a77"><span class="box" aria-hidden="true"></span><span class="txt">항공 출발 시간에서 거꾸로 계산해 호텔 출발 시각 정하기</span></label></li>
+<li class="task"><label class="chk"><input type="checkbox" data-id="68ff8b6c"><span class="box" aria-hidden="true"></span><span class="txt">호텔 09:15 출발 확정 (KE868 13:20 출발 · 공항 10:20 도착 목표)</span></label></li>
 <li class="task"><label class="chk"><input type="checkbox" data-id="e5fa9488"><span class="box" aria-hidden="true"></span><span class="txt">공항 이동 (DiDi, 약 45~50분)</span></label></li>
 </ul>
 </section>
@@ -1147,13 +1154,13 @@ function initUi(){
 }
 function initChecklist(){
   var ck=document.getElementById('tab-check');if(!ck)return;
-  var KEY='gz27-check-v1',st={};
+  var KEY='gz27-check-v1',st={},SYNC=window.GZ_SYNC||'',pend={},synOk=false;
   try{st=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){st={};}
   function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
   var boxes=ck.querySelectorAll('input[type=checkbox][data-id]');
   var o=document.getElementById('ovr');
   if(o){o.innerHTML='<div class="ovr-top"><strong>전체 진행</strong><span id="ovrn"></span></div>'
-    +'<div class="bar"><i id="ovrb"></i></div><button type="button" class="rst" id="rst">체크 초기화</button>';}
+    +'<div class="bar"><i id="ovrb"></i></div><div class="ovr-bot"><button type="button" class="rst" id="rst">체크 초기화</button><span id="syn" class="syn"></span></div>';}
   var rst=document.getElementById('rst'),rt=null;
   function apply(){
     boxes.forEach(function(x){
@@ -1177,13 +1184,47 @@ function initChecklist(){
     if(n)n.textContent=done+' / '+t+' 완료 · '+pct+'%';
     if(bar)bar.style.width=pct+'%';
   }
-  boxes.forEach(function(x){x.addEventListener('change',function(){st[x.dataset.id]=x.checked;save();refresh();});});
+  var syn=document.getElementById('syn');
+  function status(){
+    if(!syn)return;
+    if(!SYNC){syn.textContent='이 기기에만 저장';return;}
+    var d=new Date(),m=d.getMinutes();
+    syn.textContent=synOk?('가족 공유 · 동기화됨 '+d.getHours()+':'+(m<10?'0':'')+m):'오프라인 · 연결되면 자동 동기화';
+    syn.classList.toggle('bad',!synOk);
+  }
+  function call(q){
+    return fetch(SYNC+'?'+q,{cache:'no-store'}).then(function(r){return r.json();});
+  }
+  function onServer(j){
+    if(!j||!j.items)throw new Error('bad');
+    st={};Object.keys(j.items).forEach(function(k){st[k]=!!j.items[k];});
+    Object.keys(pend).forEach(function(k){st[k]=pend[k];});
+    synOk=true;save();apply();refresh();status();
+  }
+  function flush(){
+    Object.keys(pend).forEach(function(id){
+      var v=pend[id];
+      call('action=set&id='+id+'&v='+(v?1:0)).then(function(j){if(pend[id]===v)delete pend[id];onServer(j);}).catch(function(){synOk=false;status();});
+    });
+  }
+  function pull(){
+    if(!SYNC||document.hidden)return;
+    call('action=get').then(function(j){onServer(j);flush();}).catch(function(){synOk=false;status();});
+  }
+  boxes.forEach(function(x){x.addEventListener('change',function(){
+    st[x.dataset.id]=x.checked;save();refresh();
+    if(SYNC){pend[x.dataset.id]=x.checked;flush();}
+  });});
   if(rst)rst.addEventListener('click',function(){
-    if(rst.dataset.arm==='1'){st={};save();apply();refresh();rst.dataset.arm='0';rst.textContent='체크 초기화';clearTimeout(rt);return;}
-    rst.dataset.arm='1';rst.textContent='모든 체크가 지워집니다. 한 번 더 누르세요';
+    if(rst.dataset.arm==='1'){
+      st={};pend={};save();apply();refresh();rst.dataset.arm='0';rst.textContent='체크 초기화';clearTimeout(rt);
+      if(SYNC)call('action=reset').then(onServer).catch(function(){synOk=false;status();});
+      return;}
+    rst.dataset.arm='1';rst.textContent=SYNC?'가족 전체 체크가 지워집니다. 한 번 더':'모든 체크가 지워집니다. 한 번 더 누르세요';
     rt=setTimeout(function(){rst.dataset.arm='0';rst.textContent='체크 초기화';},4000);
   });
-  apply();refresh();
+  apply();refresh();status();
+  if(SYNC){pull();setInterval(pull,15000);document.addEventListener('visibilitychange',pull);window.addEventListener('online',pull);}
 }
 initUi();</script>
 </body>
